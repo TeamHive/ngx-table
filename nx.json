@@ -7,5 +7,15 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "demo-web": {
+      "tags": []
+    },
+    "ngx-table": {
+      "tags": []
+    },
+    "source-tabs": {
+      "tags": []
+    }
+  }
 }

@@ -1,0 +1,91 @@
+:host {
+    --ngx-table-border-width: 1px;
+    --ngx-table-border-color: #cccccc;
+    --ngx-table-border-style: solid;
+    --ngx-table-border-radius: 0;
+
+    --ngx-table-background-color: white;
+
+    --ngx-table-header-background-color: var(--ngx-table-background-color);
+    --ngx-table-odd-row-background-color: var(--ngx-table-background-color);
+    --ngx-table-even-row-background-color: var(--ngx-table-background-color);;
+
+    --ngx-table-row-height: auto;
+    --ngx-table-cell-align-items: center;
+    --ngx-table-cell-justify-content: center;
+    --ngx-table-cell-padding: 0;
+
+    --ngx-table-header-pointer-events: initial;
+    --ngx-table-content-pointer-events: initial;
+
+    border-radius: var(--ngx-table-border-radius);
+}
+
+.ngx-table {
+    display: flex;
+    flex-direction: column;
+    border: var(--ngx-table-border-width) var(--ngx-table-border-style) var(--ngx-table-border-color);
+    border-radius: var(--ngx-table-border-radius);
+    min-width: 100%;
+    max-width: 100%;
+    width: 0;
+}
+
+.ngx-table-header {
+    display: flex;
+    border-bottom: var(--ngx-table-border-width) var(--ngx-table-border-style) var(--ngx-table-border-color);
+    border-top-right-radius: var(--ngx-table-border-radius);
+    border-top-left-radius: var(--ngx-table-border-radius);
+    background-color: var(--ngx-table-header-background-color);
+    pointer-events: var(--ngx-table-header-pointer-events);
+}
+
+.ngx-table-data {
+    display: flex;
+    flex-direction: column;
+
+    pointer-events: var(--ngx-table-content-pointer-events);
+}
+
+.ngx-table-row {
+    display: flex;
+    height: var(--ngx-table-row-height);
+
+    & ~ .ngx-table-row {
+        border-top: var(--ngx-table-border-width) var(--ngx-table-border-style) var(--ngx-table-border-color);
+    }
+
+    &:last-child {
+        border-bottom-right-radius: var(--ngx-table-border-radius);
+        border-bottom-left-radius: var(--ngx-table-border-radius);
+
+        &::before {
+            border-bottom-left-radius: var(--ngx-table-border-radius);
+        }
+
+        &::after {
+            border-bottom-right-radius: var(--ngx-table-border-radius);
+        }
+    }
+}
+
+.ngx-table-row-even {
+    background-color: var(--ngx-table-even-row-background-color);
+}
+
+.ngx-table-row-odd {
+    background-color: var(--ngx-table-odd-row-background-color);
+}
+
+.ngx-table-cell {
+    display: flex;
+    flex-basis: 0;
+    align-items: var(--ngx-table-cell-align-items);
+    justify-content: var(--ngx-table-cell-justify-content);
+    padding: var(--ngx-table-cell-padding);
+    min-width: 0;
+
+    & ~ .ngx-table-cell {
+        border-left: var(--ngx-table-border-width) var(--ngx-table-border-style) var(--ngx-table-border-color);
+    }
+}

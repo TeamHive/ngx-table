@@ -1,0 +1,21 @@
+<div
+    class="experimental-page"
+    fxLayout.gt-md="row"
+    fxLayout.lt-md="column"
+    fxLayoutAlign="space-evenly stretch"
+    fxLayoutAlign.lt-md="center">
+    <div fxFlex.gt-sm="50">
+        <ngx-docs-example
+            title="Basic Table"
+            [html]="source.html"
+            [ts]="source.ts">
+            <div class="body">
+                <app-basic-table></app-basic-table>
+            </div>
+        </ngx-docs-example>
+    </div>
+    <source-tabs
+        title="Other files"
+        [files]="otherFiles"
+        fxFlex.gt-sm="50"></source-tabs>
+</div>

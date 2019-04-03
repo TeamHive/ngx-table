@@ -1,0 +1,23 @@
+<div class="ngx-table" [ngClass]="configuration.tableId">
+    <div class="ngx-table-header" *ngIf="hasHeaders()">
+        <div *ngFor="let columnId of configuration.columns; let i=index"
+            [class]="'ngx-table-cell ngx-table-column-' + columnId" [ngStyle]="getColumnSize(columnId)">
+
+            <ng-template
+                [ngTemplateOutlet]="getTemplateForHeaderCell(columnId)"
+                [ngTemplateOutletContext]="{ $implicit: getHeaderCellContext(columnId) }"></ng-template>
+        </div>
+    </div>
+    <div class="ngx-table-data">
+        <div *ngFor="let item of items; let even=even; let odd=odd" (click)="onRowClick(item)"
+            class="ngx-table-row" [class.ngx-table-row-odd]="odd" [class.ngx-table-row-even]="even">
+
+            <div *ngFor="let columnId of configuration.columns; let i=index"
+                [class]="'ngx-table-cell ngx-table-row-cell ngx-table-column-' + columnId" [ngStyle]="getColumnSize(columnId)">
+                    <ng-template
+                        [ngTemplateOutlet]="getTemplateForRowCell(columnId)"
+                        [ngTemplateOutletContext]="{ $implicit: getRowCellContext(columnId, item) }"></ng-template>
+            </div>
+        </div>
+    </div>
+</div>

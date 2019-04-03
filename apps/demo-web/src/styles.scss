@@ -1,0 +1,117 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+  margin-top: 50px;
+}
+
+.mat-menu-item{
+    .mat-icon{
+        svg{
+            padding-bottom: 10px;
+        }
+    }
+}
+.mat-button, .mat-fab, .mat-icon-button, .mat-mini-fab, .mat-raised-button, .mat-menu-item {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.mat-table {
+    .mat-header-row, .mat-row{
+        padding: 0;
+    }
+
+    .mat-column-action {
+        text-align: center;
+        max-width: 100px;
+    }
+}
+
+.ngx-docs-example {
+    .ngx-docs-example-body {
+        padding-top: 10px
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+
+.margin-15 {
+    margin: 15px;
+}
+.padding-left-15 {
+    padding-left: 15px;
+}
+.padding-top-15 {
+    padding-top: 15px
+}
+
+
+:root {
+  --ngx-docs-example-box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
+  --ngx-docs-example-border: 1px solid rgba(0,0,0,.03);
+}
+
+.ngx-docs-example {
+  margin: 3px 3px 32px 3px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: var(--ngx-docs-example-border);
+  box-shadow: var(--ngx-docs-example-box-shadow);
+
+  ngx-prism > pre {
+    background: #ffffff;
+    background-color: #ffffff;
+  }
+
+  > .ngx-docs-example-title {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 8px 16px;
+    color: rgba(0,0,0,.54);
+    background: rgba(0,0,0,.03);
+
+    span.spacer {
+      flex: 1 1 auto;
+    }
+
+    button {
+      min-width: 44px
+    }
+  }
+  > .ngx-docs-example-source {
+    .mat-tab-body {
+      display: block;
+      width: 100%;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  }
+  > .ngx-docs-example-debug {
+    display: block;
+    width: 100%;
+    padding: 16px 32px;
+    box-sizing: border-box;
+    border-top: 1px solid #f1f1f1;
+    background: rgba(0,0,0,.03);
+  }
+  > .ngx-docs-example-body {
+    display: block;
+    width: 100%;
+    padding: 16px 16px;
+    box-sizing: border-box;
+    border-top: 1px solid #f1f1f1;
+    &.margin-minus-16{
+      margin-top: -16px;
+    }
+  }
+}
