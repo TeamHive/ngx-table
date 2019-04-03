@@ -25,8 +25,11 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
-    "build:libs": "npm run build:ngx-table",
-    "build:ngx-table": "ng-packagr -p libs/ngx-table/package.json"
+    "build:package": "ng-packagr -p libs/$npm_package_name/package.json",
+    "prepublish" : "npm run git:tag && npm run git:push && npm run prepublish:move-to-dist",
+    "git:tag": "PACKAGE_VERSION=$(cat libs/$npm_package_name/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag $PACKAGE_VERSION",
+    "git:push": "git push --tags",
+    "prepublish:move-to-dist": "PACKAGE_NAME=$(cat libs/$npm_package_name/package.json | grep name | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && cd dist/$PACKAGE_NAME"
   },
   "private": true,
   "dependencies": {
