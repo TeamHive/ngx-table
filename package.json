@@ -32,14 +32,20 @@
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
 
-    "version:package": "cd libs/$npm_package_name && npm version ",
-    "version:package:git": "npm run git:commit:version && npm run git:tag && npm run git:push",
+    "package:version": "cd libs/$npm_package_name && npm version",
+    "package:version:git": "npm run git:commit:version && npm run git:tag && npm run git:push",
 
-    "git:tag": "PACKAGE_VERSION=$(cat libs/$npm_package_name/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag $PACKAGE_VERSION",
-    "git:commit:version": "PACKAGE_VERSION=$(cat libs/$npm_package_name/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git commit -m $PACKAGE_VERSION libs/$npm_package_name/package.json",
+    "git:commit:version": "git add libs/$npm_package_name/package.json && npm run var:pipe-package-version -- git commit -m $1",
+    "git:tag": "npm run var:pipe-package-version -- git tag $1",
     "git:push": "git push && git push --tags",
 
-    "publish": "PACKAGE_LOCATION=$(cat libs/$npm_package_name/package.json | grep name | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && npm publish dist/$PACKAGE_LOCATION --access public"
+    "publish": "npm run var:pipe-dist-location -- npm publish $1 --dry-run",
+
+    "var:pipe-package-version": "bash ./tools/scripts/get-prop.sh $npm_package_name version | xargs ",
+    "var:pipe-dist-location": "bash ./tools/scripts/get-prop.sh $npm_package_name name dist/ | xargs "
+  },
+  "config": {
+    "thing": "one"
   },
   "dependencies": {
     "@angular/animations": "^7.0.0",
