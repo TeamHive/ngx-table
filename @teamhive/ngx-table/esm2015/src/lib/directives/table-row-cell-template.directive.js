@@ -1,0 +1,28 @@
+import * as tslib_1 from "tslib";
+import { Directive, Input, TemplateRef } from '@angular/core';
+import { NgxTableComponent } from '../components';
+import { TableCellTemplateService } from '../services';
+let NgxTableRowCellTemplateDirective = class NgxTableRowCellTemplateDirective {
+    constructor(host, service, ngxTable) {
+        this.host = host;
+        this.service = service;
+        this.ngxTable = ngxTable;
+    }
+    ngOnInit() {
+        this.service.register('row-cell', this.ngxTable.configuration.tableId, this.ngxColumn, this.host);
+    }
+};
+tslib_1.__decorate([
+    Input(),
+    tslib_1.__metadata("design:type", String)
+], NgxTableRowCellTemplateDirective.prototype, "ngxColumn", void 0);
+NgxTableRowCellTemplateDirective = tslib_1.__decorate([
+    Directive({
+        selector: '[ngxColumn]'
+    }),
+    tslib_1.__metadata("design:paramtypes", [TemplateRef,
+        TableCellTemplateService,
+        NgxTableComponent])
+], NgxTableRowCellTemplateDirective);
+export { NgxTableRowCellTemplateDirective };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFibGUtcm93LWNlbGwtdGVtcGxhdGUuZGlyZWN0aXZlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQHRlYW1oaXZlL25neC10YWJsZS8iLCJzb3VyY2VzIjpbInNyYy9saWIvZGlyZWN0aXZlcy90YWJsZS1yb3ctY2VsbC10ZW1wbGF0ZS5kaXJlY3RpdmUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsS0FBSyxFQUFVLFdBQVcsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUN0RSxPQUFPLEVBQUUsaUJBQWlCLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDbEQsT0FBTyxFQUFFLHdCQUF3QixFQUFFLE1BQU0sYUFBYSxDQUFDO0FBS3ZELElBQWEsZ0NBQWdDLEdBQTdDLE1BQWEsZ0NBQWdDO0lBRzFDLFlBQ2MsSUFBc0IsRUFDdEIsT0FBaUMsRUFDakMsUUFBcUM7UUFGckMsU0FBSSxHQUFKLElBQUksQ0FBa0I7UUFDdEIsWUFBTyxHQUFQLE9BQU8sQ0FBMEI7UUFDakMsYUFBUSxHQUFSLFFBQVEsQ0FBNkI7SUFDOUMsQ0FBQztJQUVOLFFBQVE7UUFDSixJQUFJLENBQUMsT0FBTyxDQUFDLFFBQVEsQ0FBQyxVQUFVLEVBQUUsSUFBSSxDQUFDLFFBQVEsQ0FBQyxhQUFhLENBQUMsT0FBTyxFQUFFLElBQUksQ0FBQyxTQUFTLEVBQUUsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQ3RHLENBQUM7Q0FDSCxDQUFBO0FBWFc7SUFBUixLQUFLLEVBQUU7O21FQUFtQjtBQURqQixnQ0FBZ0M7SUFINUMsU0FBUyxDQUFDO1FBQ1AsUUFBUSxFQUFFLGFBQWE7S0FDMUIsQ0FBQzs2Q0FLcUIsV0FBVztRQUNSLHdCQUF3QjtRQUN2QixpQkFBaUI7R0FOL0IsZ0NBQWdDLENBWTVDO1NBWlksZ0NBQWdDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgRGlyZWN0aXZlLCBJbnB1dCwgT25Jbml0LCBUZW1wbGF0ZVJlZiB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgTmd4VGFibGVDb21wb25lbnQgfSBmcm9tICcuLi9jb21wb25lbnRzJztcbmltcG9ydCB7IFRhYmxlQ2VsbFRlbXBsYXRlU2VydmljZSB9IGZyb20gJy4uL3NlcnZpY2VzJztcblxuQERpcmVjdGl2ZSh7XG4gICAgc2VsZWN0b3I6ICdbbmd4Q29sdW1uXSdcbn0pXG5leHBvcnQgY2xhc3MgTmd4VGFibGVSb3dDZWxsVGVtcGxhdGVEaXJlY3RpdmUgaW1wbGVtZW50cyBPbkluaXQge1xuICAgQElucHV0KCkgbmd4Q29sdW1uOiBzdHJpbmc7XG5cbiAgIGNvbnN0cnVjdG9yKFxuICAgICAgIHByb3RlY3RlZCBob3N0OiBUZW1wbGF0ZVJlZjxhbnk+LFxuICAgICAgIHByb3RlY3RlZCBzZXJ2aWNlOiBUYWJsZUNlbGxUZW1wbGF0ZVNlcnZpY2UsXG4gICAgICAgcHJvdGVjdGVkIG5neFRhYmxlOiBOZ3hUYWJsZUNvbXBvbmVudDxhbnksIGFueT5cbiAgICApIHsgfVxuXG4gICBuZ09uSW5pdCgpIHtcbiAgICAgICB0aGlzLnNlcnZpY2UucmVnaXN0ZXIoJ3Jvdy1jZWxsJywgdGhpcy5uZ3hUYWJsZS5jb25maWd1cmF0aW9uLnRhYmxlSWQgLHRoaXMubmd4Q29sdW1uLCB0aGlzLmhvc3QpO1xuICAgfVxufVxuIl19

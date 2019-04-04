@@ -1,0 +1,11 @@
+var TableCellTemplate = /** @class */ (function () {
+    function TableCellTemplate(scope, tableId, id, ref) {
+        this.scope = scope;
+        this.tableId = tableId;
+        this.id = id;
+        this.ref = ref;
+    }
+    return TableCellTemplate;
+}());
+export { TableCellTemplate };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFibGUtY2VsbC10ZW1wbGF0ZS5tb2RlbC5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0B0ZWFtaGl2ZS9uZ3gtdGFibGUvIiwic291cmNlcyI6WyJzcmMvbGliL21vZGVscy90YWJsZS1jZWxsLXRlbXBsYXRlLm1vZGVsLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0lBQ0ksMkJBQ1csS0FBNkIsRUFDN0IsT0FBZSxFQUNmLEVBQVUsRUFDVixHQUFxQjtRQUhyQixVQUFLLEdBQUwsS0FBSyxDQUF3QjtRQUM3QixZQUFPLEdBQVAsT0FBTyxDQUFRO1FBQ2YsT0FBRSxHQUFGLEVBQUUsQ0FBUTtRQUNWLFFBQUcsR0FBSCxHQUFHLENBQWtCO0lBQzVCLENBQUM7SUFDVCx3QkFBQztBQUFELENBQUMsQUFQRCxJQU9DIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgVGVtcGxhdGVSZWYgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuZXhwb3J0IGNsYXNzIFRhYmxlQ2VsbFRlbXBsYXRlIHtcbiAgICBjb25zdHJ1Y3RvcihcbiAgICAgICAgcHVibGljIHNjb3BlOiBUYWJsZUNlbGxUZW1wbGF0ZVNjb3BlLFxuICAgICAgICBwdWJsaWMgdGFibGVJZDogc3RyaW5nLFxuICAgICAgICBwdWJsaWMgaWQ6IHN0cmluZyxcbiAgICAgICAgcHVibGljIHJlZjogVGVtcGxhdGVSZWY8YW55PlxuICAgICkgeyB9XG59XG5cbmV4cG9ydCB0eXBlIFRhYmxlQ2VsbFRlbXBsYXRlU2NvcGUgPSAnaGVhZGVyLWNlbGwnIHwgJ3Jvdy1jZWxsJztcbiJdfQ==
