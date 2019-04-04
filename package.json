@@ -2,10 +2,16 @@
   "name": "ngx-table",
   "version": "0.0.1",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TeamHive/ngx-table"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "npm run lint && npm run test && npm run build:package",
+    "build:package": "ng-packagr -p libs/$npm_package_name/package.json",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
@@ -25,13 +31,17 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
-    "build:package": "ng-packagr -p libs/$npm_package_name/package.json",
-    "prepublish" : "npm run git:tag && npm run git:push && npm run prepublish:move-to-dist",
+
+    "version:package": "cd libs/$npm_package_name && npm version ",
+    "version:package:git": "npm run git:commit:version && npm run git:tag && npm run git:push",
+
     "git:tag": "PACKAGE_VERSION=$(cat libs/$npm_package_name/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag $PACKAGE_VERSION",
-    "git:push": "git push --tags",
+    "git:commit:version": "PACKAGE_VERSION=$(cat libs/$npm_package_name/package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git commit -m $PACKAGE_VERSION libs/$npm_package_name/package.json",
+    "git:push": "git push && git push --tags",
+
+    "prepublish" : "npm run build:prod && npm run prepublish:move-to-dist",
     "prepublish:move-to-dist": "PACKAGE_NAME=$(cat libs/$npm_package_name/package.json | grep name | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && cd dist/$PACKAGE_NAME"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^7.0.0",
     "@angular/cdk": "^7.3.6",
