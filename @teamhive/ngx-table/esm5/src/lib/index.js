@@ -1,6 +1,0 @@
-export * from './ngx-table.module';
-export * from './components';
-export * from './services';
-export * from './directives';
-export * from './models';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9AdGVhbWhpdmUvbmd4LXRhYmxlLyIsInNvdXJjZXMiOlsic3JjL2xpYi9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxjQUFjLG9CQUFvQixDQUFDO0FBQ25DLGNBQWMsY0FBYyxDQUFDO0FBQzdCLGNBQWMsWUFBWSxDQUFDO0FBQzNCLGNBQWMsY0FBYyxDQUFDO0FBQzdCLGNBQWMsVUFBVSxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnLi9uZ3gtdGFibGUubW9kdWxlJztcbmV4cG9ydCAqIGZyb20gJy4vY29tcG9uZW50cyc7XG5leHBvcnQgKiBmcm9tICcuL3NlcnZpY2VzJztcbmV4cG9ydCAqIGZyb20gJy4vZGlyZWN0aXZlcyc7XG5leHBvcnQgKiBmcm9tICcuL21vZGVscyc7XG4iXX0=
