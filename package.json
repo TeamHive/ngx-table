@@ -6,12 +6,20 @@
     "type": "git",
     "url": "https://github.com/TeamHive/ngx-table"
   },
+  "config": {
+    "githubScope": "teamhive"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "npm run lint && npm run test && npm run build:package",
     "build:package": "ng-packagr -p libs/$npm_package_name/package.json",
+    "build:gh-pages": "ng build --prod --project=demo-web --base-href https://$npm_package_config_githubScope.github.io/$npm_package_name/",
+    "prepublish": "npm run build:package",
+    "publish:package": "npm run var:pipe-dist-location -- npm publish $1 --access public",
+    "publish:gh-pages": "ngh --dir=dist/apps/demo-web",
+    "gh-pages": "npm run build:gh-pages && npm run publish:gh-pages",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
@@ -31,21 +39,13 @@
     "workspace-schematic": "./node_modules/.bin/nx workspace-schematic",
     "dep-graph": "./node_modules/.bin/nx dep-graph",
     "help": "./node_modules/.bin/nx help",
-
     "package:version": "cd libs/$npm_package_name && npm version",
     "package:version:git": "npm run git:commit:version && npm run git:tag && npm run git:push",
-
     "git:commit:version": "git add libs/$npm_package_name/package.json && npm run var:pipe-package-version -- git commit -m $1",
     "git:tag": "npm run var:pipe-package-version -- git tag $1",
     "git:push": "git push && git push --tags",
-
-    "publish": "npm run var:pipe-dist-location -- npm publish $1 --dry-run",
-
     "var:pipe-package-version": "bash ./tools/scripts/get-prop.sh $npm_package_name version | xargs ",
     "var:pipe-dist-location": "bash ./tools/scripts/get-prop.sh $npm_package_name name dist/ | xargs "
-  },
-  "config": {
-    "thing": "one"
   },
   "dependencies": {
     "@angular/animations": "^7.0.0",
@@ -59,12 +59,16 @@
     "@angular/platform-browser": "^7.0.0",
     "@angular/platform-browser-dynamic": "^7.0.0",
     "@angular/router": "^7.0.0",
+    "@ngrx/effects": "^7.4.0",
+    "@ngrx/router-store": "^7.4.0",
+    "@ngrx/store": "^7.4.0",
     "@ngx-docs/example": "^0.1.6",
     "@ngx-prism/core": "^2.0.1",
     "@nrwl/nx": "7.3.0",
     "core-js": "^2.5.4",
     "lodash-es": "^4.17.11",
     "marked": "^0.6.1",
+    "ngx-markdown": "^7.1.4",
     "prismjs": "^1.16.0",
     "rxjs": "~6.3.3",
     "zone.js": "^0.8.26"
@@ -78,6 +82,7 @@
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^8.10.45",
+    "angular-cli-ghpages": "^0.5.3",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-marbles": "0.4.0",
