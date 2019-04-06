@@ -3,4 +3,5 @@ export interface TableData {
   bio: string;
   age: number;
   active: boolean;
+  location: string;
 }

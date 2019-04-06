@@ -14,5 +14,8 @@ export class AppComponent {
   },{
     title: 'Styled',
     location: '/styled'
+  },{
+    title: 'Configured',
+    location: '/configured'
   }]
 }

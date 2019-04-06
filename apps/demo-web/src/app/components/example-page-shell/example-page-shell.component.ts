@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-example-page-shell',
@@ -7,6 +7,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 })
 export class ExamplePageShellComponent {
 
+  @Input() exampleTitle = 'Example';
   @Input() exampleSources: { ts?: string; html?: string; css?: string; } = {};
   @Input() otherSources : { name: string; language: string; content: string }[] = [];
 

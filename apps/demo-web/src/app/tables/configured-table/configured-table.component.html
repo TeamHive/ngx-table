@@ -1,0 +1,20 @@
+<h3 class="example-header">Table Configurations</h3>
+<p>This can be extended to pass any data to any header or cell. See <a href="/customized">Customized Example</a></p>
+
+<div class="column-option-row clickable" *ngFor="let item of dataOptions; let i = index">
+  <input [id]="'column-' + item" type="checkbox" (change)="onColumnCheckboxChanged(item)" [checked]="isChecked(item)"/>
+  <label [for]="'column-' + item" [innerText]="item" class="clickable"></label>
+  <input (change)="onColumnSizeChanged(item, $event.target.value)" onFocus="this.select()" [value]="configuration.definitions[item]?.columnSize" placeholder="A flex value or any css unit (2, 40%, 20vw)"/>
+</div>
+
+<ngx-table [configuration]="configuration" [items]="data">
+    <ng-container *ngFor="let columnId of configuration.columns">
+        <ng-template let-item [ngxHeader]="columnId">
+            <h3>{{ columnId }}</h3>
+        </ng-template>
+
+        <ng-template let-item [ngxColumn]="columnId">
+          <span>{{ item.data[columnId] }}</span>
+      </ng-template>
+    </ng-container>
+</ngx-table>

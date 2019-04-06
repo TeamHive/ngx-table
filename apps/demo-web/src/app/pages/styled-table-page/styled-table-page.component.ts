@@ -23,6 +23,16 @@ export class StyledTablePageComponent {
       name: 'sample-data.ts',
       language: 'javascript',
       content: require('!!raw-loader?lang=typescript!../../data/sample-data.ts')
+    },
+    {
+      name: 'parse.utils.ts',
+      language: 'javascript',
+      content: require('!!raw-loader?lang=typescript!../../utils/parse.utils.ts')
+    },
+    {
+      name: 'README.md',
+      language: 'markdown',
+      content: require('!!raw-loader?lang=markdown!../../../../../../libs/ngx-table/README.md')
     }
   ];
 }

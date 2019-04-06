@@ -1,0 +1,33 @@
+
+.column-option-row {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+
+  padding: 5px;
+
+  &:hover {
+    background-color: #EBEBEB;
+  }
+
+  label {
+    width: 100px;
+  }
+
+  & > *:last-child {
+    flex: 1;
+  }
+}
+
+ngx-table {
+  margin-top: 20px;
+}
+
+.example-header {
+  margin-bottom: 0;
+
+  & + p {
+    margin-top: 0;
+    color: #AAAAAA;
+  }
+}

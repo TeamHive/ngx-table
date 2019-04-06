@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { BasicTablePageComponent } from './pages/basic-table-page/basic-table-page.component';
+import { ConfiguredTablePageComponent } from './pages/configured-table-page/configured-table-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { StyledTablePageComponent } from './pages/styled-table-page/styled-table-page.component';
 
@@ -20,6 +21,10 @@ export const AppRoutes: Routes = [
       path: 'styled',
       component: StyledTablePageComponent
     },
+    {
+      path: 'configured',
+      component: ConfiguredTablePageComponent
+    },
 
     /**
      * Default path match when no routes match the user's destination path.
@@ -35,5 +40,6 @@ export const AppRoutes: Routes = [
 export const AppPages = [
   HomePageComponent,
   BasicTablePageComponent,
-  StyledTablePageComponent
+  StyledTablePageComponent,
+  ConfiguredTablePageComponent
 ];

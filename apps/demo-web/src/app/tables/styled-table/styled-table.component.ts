@@ -1,8 +1,8 @@
-import { Component, ElementRef, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import { TableConfiguration } from '@teamhive/ngx-table';
 import { SampleTableData } from '../../data/sample-data';
 import { TableData } from '../../models/table-data.interface';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { ParseUtils } from '../../utils/parse.utils';
 
 @Component({
   selector: 'app-styled-table',
@@ -30,7 +30,7 @@ export class StyledTableComponent implements AfterViewInit {
   constructor(protected elementRef: ElementRef) {
     const readmeText: string = require('!!raw-loader?lang=markdown!../../../../../../libs/ngx-table/README.md');
 
-    this.cssVars = parseMarkdownTable(getStringBetweenCommentTags(readmeText, 'css-vars'));
+    this.cssVars = ParseUtils.parseMarkdownTable(ParseUtils.getStringBetweenCommentTags(readmeText, 'css-vars'));
   }
 
   ngAfterViewInit() {
@@ -44,33 +44,4 @@ export class StyledTableComponent implements AfterViewInit {
   onVarRowClicked(element: HTMLInputElement) {
     (element.closest('.css-var-row').querySelector('input') as HTMLInputElement).focus();
   }
-}
-
-export function getStringBetweenCommentTags(docText: string, commentKey: string): string {
-  const startTag = commentTag('start');
-  const endTag = commentTag('end');
-
-  return docText.substring(docText.indexOf(startTag) + startTag.length, docText.indexOf(endTag));
-
-  function commentTag(bound: 'start' | 'end'): string {
-    return `<!-- ${commentKey}:${bound} -->`
-  }
-}
-
-export function parseMarkdownTable(mdTable: string) {
-  mdTable = mdTable.trim();
-
-  const lines = mdTable.split('\n');
-  const result: string[][] = [];
-
-  for (let i = 2; i < lines.length; i++) {
-    result.push(
-      lines[i].trim().split('|')
-        .filter(x => !!x)
-        .map(x => {
-          return x.trim().replace(/['`"]/g, '');
-        }));
-  }
-
-  return result;
 }
