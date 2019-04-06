@@ -1,0 +1,11 @@
+<ngx-table [configuration]="configuration" [items]="data">
+    <ng-container *ngFor="let columnId of configuration.columns">
+        <ng-template let-item [ngxHeader]="columnId">
+            <h3>{{ columnId }}</h3>
+        </ng-template>
+
+        <ng-template let-item [ngxColumn]="columnId">
+          <span>{{ item.data[columnId] }}</span>
+      </ng-template>
+    </ng-container>
+</ngx-table>

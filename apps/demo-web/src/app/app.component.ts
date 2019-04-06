@@ -11,11 +11,14 @@ export class AppComponent {
   navItems: any[] = [{
     title: 'Basic',
     location: '/basic'
-  },{
+  }, {
     title: 'Styled',
     location: '/styled'
-  },{
+  }, {
     title: 'Configured',
     location: '/configured'
+  }, {
+    title: 'Customized',
+    location: '/customized'
   }]
 }
