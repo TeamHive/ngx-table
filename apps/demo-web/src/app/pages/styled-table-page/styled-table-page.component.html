@@ -1,22 +1,3 @@
-<div
-    class="experimental-page"
-    fxLayout.gt-md="row"
-    fxLayout.lt-md="column"
-    fxLayoutAlign="space-evenly stretch"
-    fxLayoutAlign.lt-md="center">
-    <div fxFlex.gt-sm="50">
-        <ngx-docs-example
-            title="Styled Table"
-            [html]="source.html"
-            [css]="source.css"
-            [ts]="source.ts">
-            <div class="body">
-                <app-styled-table></app-styled-table>
-            </div>
-        </ngx-docs-example>
-    </div>
-    <source-tabs
-        title="Other files"
-        [files]="otherFiles"
-        fxFlex.gt-sm="50"></source-tabs>
-</div>
+<app-example-page-shell sourceTitle="Styled Table" [exampleSources]="source" [otherSources]="otherFiles">
+  <app-styled-table></app-styled-table>
+</app-example-page-shell>

@@ -11,11 +11,13 @@ import { MarkdownModule } from 'ngx-markdown';
 import { AppComponent } from './app.component';
 import { AppPages, AppRoutes } from './app.routes';
 import { AppTables } from './tables';
+import { AppComponents } from './components';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...AppPages,
+    ...AppComponents,
     ...AppTables
   ],
   imports: [
