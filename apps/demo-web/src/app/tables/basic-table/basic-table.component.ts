@@ -11,25 +11,14 @@ import { TableData } from '../../models/table-data.interface';
 export class BasicTableComponent {
 
   readonly configuration: TableConfiguration<TableData> = {
+    tableId: 'basicTable',
     columns: ['name', 'bio', 'age', 'active'],
     definitions: {
-      active: {
-        columnSize: 1
-      },
-      age: {
-        columnSize: 1
-      },
       bio: {
-        columnSize: 4
-      },
-      name: {
-        columnSize: 2
+        columnSize: 3
       }
-    },
-    tableId: 'basicTable'
+    }
   };
 
   readonly data: TableData[] = SampleTableData.data;
-
-  constructor() { }
 }

@@ -8,7 +8,7 @@
 
     --ngx-table-header-background-color: var(--ngx-table-background-color);
     --ngx-table-odd-row-background-color: var(--ngx-table-background-color);
-    --ngx-table-even-row-background-color: var(--ngx-table-background-color);;
+    --ngx-table-even-row-background-color: var(--ngx-table-background-color);
 
     --ngx-table-row-height: auto;
     --ngx-table-cell-align-items: center;
@@ -19,6 +19,8 @@
     --ngx-table-content-pointer-events: initial;
 
     border-radius: var(--ngx-table-border-radius);
+
+    display: flex;
 }
 
 .ngx-table {

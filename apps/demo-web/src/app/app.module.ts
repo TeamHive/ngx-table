@@ -7,6 +7,7 @@ import { DocsExampleModule } from '@ngx-docs/example';
 import { NxModule } from '@nrwl/nx';
 import { NgxTableModule } from '@teamhive/ngx-table';
 import { SourceTabsModule } from '@teamhive/source-tabs';
+import { MarkdownModule } from 'ngx-markdown';
 import { AppComponent } from './app.component';
 import { AppPages, AppRoutes } from './app.routes';
 import { AppTables } from './tables';
@@ -25,7 +26,8 @@ import { AppTables } from './tables';
     DocsExampleModule.forRoot(),
     FlexLayoutModule,
     SourceTabsModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MarkdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

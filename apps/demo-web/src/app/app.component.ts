@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngx-table';
+
+  navItems: any[] = [{
+    title: 'Basic',
+    location: '/basic'
+  },{
+    title: 'Styled',
+    location: '/styled'
+  }]
 }

@@ -1,0 +1,19 @@
+<h3 class="example-header">CSS Variables</h3>
+<p>The table can be styled further using a root level stylesheet</p>
+
+<div class="css-var-row clickable" *ngFor="let item of cssVars" (click)="onVarRowClicked($event.target)">
+  <label class="clickable" [innerText]="item[0]"></label>
+  <input (change)="onVarChanged(item[0], $event.target)" onFocus="this.select()" [value]="item[2]" [placeholder]=item[2]/>
+</div>
+
+<ngx-table [configuration]="configuration" [items]="data">
+    <ng-container *ngFor="let columnId of configuration.columns">
+        <ng-template let-item [ngxHeader]="columnId">
+            <h3>{{ columnId }}</h3>
+        </ng-template>
+
+        <ng-template let-item [ngxColumn]="columnId">
+          <span>{{ item.data[columnId] }}</span>
+      </ng-template>
+    </ng-container>
+</ngx-table>

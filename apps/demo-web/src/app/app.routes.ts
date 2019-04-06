@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { BasicTablePageComponent } from './pages/basic-table-page/basic-table-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { StyledTablePageComponent } from './pages/styled-table-page/styled-table-page.component';
 
 /**
  * Root-level route definitions
@@ -7,8 +9,16 @@ import { BasicTablePageComponent } from './pages/basic-table-page/basic-table-pa
  */
 export const AppRoutes: Routes = [
     {
-        path: 'basic',
-        component: BasicTablePageComponent
+        path: 'home',
+        component: HomePageComponent
+    },
+    {
+      path: 'basic',
+      component: BasicTablePageComponent
+    },
+    {
+      path: 'styled',
+      component: StyledTablePageComponent
     },
 
     /**
@@ -17,11 +27,13 @@ export const AppRoutes: Routes = [
      */
     {
         path: '**',
-        redirectTo: '/basic'
+        redirectTo: '/home'
     }
 ];
 
 
 export const AppPages = [
-  BasicTablePageComponent
+  HomePageComponent,
+  BasicTablePageComponent,
+  StyledTablePageComponent
 ];
