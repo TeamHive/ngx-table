@@ -1,0 +1,26 @@
+.column-header {
+  display: flex;
+  align-items: center;
+
+  & > * ~ * {
+    margin-left: 5px;
+  }
+}
+
+.material-icons {
+  font-size: 15px
+}
+
+.inactive {
+  color: red;
+}
+
+ngx-table {
+  --ngx-table-cell-padding: 5px;
+  --ngx-table-border-radius: 6px;
+  --ngx-table-even-row-background-color: #fafafc;
+  --ngx-table-border-color: #f2f2f7;
+  --ngx-table-color: #5e7e95;
+  --ngx-table-header-color: #666666;
+  box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.1);
+}

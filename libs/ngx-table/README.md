@@ -118,6 +118,11 @@ basic-table.component.html
 | `--ngx-table-header-background-color` | The background color of the table header | `var(--ngx-table-background-color)` |
 | `--ngx-table-odd-row-background-color` | The background color of the odd rows | `var(--ngx-table-background-color)` |
 | `--ngx-table-even-row-background-color` | The background color of the even rows | `var(--ngx-table-background-color)` |
+| `--ngx-table-color` | The text color of the table | `currentColor` |
+| `--ngx-table-header-color` | The text color of the headers | `var(--ngx-table-color)` |
+| `--ngx-table-body-color` | The text color of the body | `var(--ngx-table-color)` |
+| `--ngx-table-odd-row-color` | The text color of the even rows | `var(--ngx-table-body-color)` |
+| `--ngx-table-even-row-color` | The text color of the odd rows | `var(--ngx-table-body-color)` |
 | `--ngx-table-row-height` | The height of the rows of the table | `auto` |
 | `--ngx-table-cell-align-items` | The flex `align-items` value for a cell | `center` |
 | `--ngx-table-cell-justify-content` | The flex `justify-content` value for a cell | `center` |

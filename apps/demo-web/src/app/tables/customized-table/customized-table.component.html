@@ -1,11 +1,26 @@
 <ngx-table [configuration]="configuration" [items]="data">
-    <ng-container *ngFor="let columnId of configuration.columns">
-        <ng-template let-item [ngxHeader]="columnId">
-            <h3>{{ columnId }}</h3>
-        </ng-template>
+  <ng-container *ngFor="let columnId of configuration.columns">
+    <ng-template let-item [ngxHeader]="columnId">
+      <div class="column-header">
+        <i class="material-icons" *ngIf="item.definition?.matIconName">{{ item.definition.matIconName }}</i>
+        <h3>{{ item.definition?.headerLabel || columnId }}</h3>
+      </div>
+    </ng-template>
+  </ng-container>
 
-        <ng-template let-item [ngxColumn]="columnId">
-          <span>{{ item.data[columnId] }}</span>
-      </ng-template>
-    </ng-container>
+  <ng-template let-item ngxColumn="name">
+    <span>{{ item.data.name }}</span>
+  </ng-template>
+
+  <ng-template let-item ngxColumn="bio">
+    <span>{{ item.data.bio }}</span>
+  </ng-template>
+
+  <ng-template let-item ngxColumn="location">
+    <span>{{ item.data.location }}</span>
+  </ng-template>
+
+  <ng-template let-item ngxColumn="active">
+    <span [class.inactive]="item.data.active !== true">{{ item.data.active | activeLabel }}</span>
+  </ng-template>
 </ngx-table>

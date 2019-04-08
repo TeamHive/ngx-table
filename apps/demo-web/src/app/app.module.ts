@@ -10,15 +10,17 @@ import { SourceTabsModule } from '@teamhive/source-tabs';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppComponent } from './app.component';
 import { AppPages, AppRoutes } from './app.routes';
-import { AppTables } from './tables';
 import { AppComponents } from './components';
+import { AppPipes } from './pipes';
+import { AppTables } from './tables';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...AppPages,
     ...AppComponents,
-    ...AppTables
+    ...AppTables,
+    ...AppPipes
   ],
   imports: [
     BrowserModule,
