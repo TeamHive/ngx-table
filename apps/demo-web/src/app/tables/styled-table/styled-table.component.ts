@@ -28,7 +28,7 @@ export class StyledTableComponent implements AfterViewInit {
   protected tableElement: HTMLElement;
 
   constructor(protected elementRef: ElementRef) {
-    const readmeText: string = require('!!raw-loader?lang=markdown!../../../../../../libs/ngx-table/README.md');
+    const readmeText: string = require('!!raw-loader?lang=markdown!../../../../../../README.md');
 
     this.cssVars = ParseUtils.parseMarkdownTable(ParseUtils.getStringBetweenCommentTags(readmeText, 'css-vars'));
   }

@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  packageName: 'ngx-table',
+  npmScope: '@teamhive',
+  githubScope: 'TeamHive',
 };

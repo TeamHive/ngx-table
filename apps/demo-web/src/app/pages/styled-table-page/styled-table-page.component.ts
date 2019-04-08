@@ -32,7 +32,7 @@ export class StyledTablePageComponent {
     {
       name: 'README.md',
       language: 'markdown',
-      content: require('!!raw-loader?lang=markdown!../../../../../../libs/ngx-table/README.md')
+      content: require('!!raw-loader?lang=markdown!../../../../../../README.md')
     }
   ];
 }

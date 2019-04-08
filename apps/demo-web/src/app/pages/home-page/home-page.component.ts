@@ -9,7 +9,7 @@ export class HomePageComponent {
   readme: string;
 
   constructor() {
-    const readmeText: string = require('!!raw-loader?lang=markdown!../../../../../../libs/ngx-table/README.md');
+    const readmeText: string = require('!!raw-loader?lang=markdown!../../../../../../README.md');
 
     this.readme = readmeText.substr(readmeText.indexOf('<!-- header-chop -->')).replace(/```typescript/g, '```javascript');
   }

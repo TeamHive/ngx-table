@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngx-table';
+  title = environment.packageName;
+  npmLocation = `https://www.npmjs.com/package/${environment.npmScope}/${environment.packageName}`;
+  githubLocation = `https://github.com/${environment.githubScope}/${environment.packageName}`;
 
   navItems: any[] = [{
     title: 'Basic',
@@ -20,5 +23,5 @@ export class AppComponent {
   }, {
     title: 'Customized',
     location: '/customized'
-  }]
+  }];
 }

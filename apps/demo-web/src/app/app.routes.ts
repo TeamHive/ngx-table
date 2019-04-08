@@ -41,7 +41,6 @@ export const AppRoutes: Routes = [
     }
 ];
 
-
 export const AppPages = [
   HomePageComponent,
   BasicTablePageComponent,
