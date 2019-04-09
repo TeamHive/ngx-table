@@ -128,10 +128,10 @@ Publishing an updated documentation site
 npm run gh-pages
 ```
 
-Versioning and and publishing the npm package
+Versioning and and publishing the npm package. Fully supports the [npm version](https://docs.npmjs.com/cli/version.html) command
 
 ```bash
-npm run package:version
+npm run package:version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
 npm run package:version:git
 npm run publish:package
 ```

@@ -1,10 +1,12 @@
 # @teamhive/ngx-table
 
-A simple template and configuration driven table framework.
+A simple template and configuration driven table framework for Angular 5+.
 
 DEMO: [https://teamhive.github.io/ngx-table](https://teamhive.github.io/ngx-table)
 
 [Contribution Guidelines](https://github.com/TeamHive/ngx-table/blob/master/CONTRIBUTION.md)
+
+[Changelog](https://github.com/TeamHive/ngx-table/releases)
 
 <!-- header-chop -->
 ## Installation
