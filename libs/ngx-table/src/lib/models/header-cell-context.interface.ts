@@ -1,7 +1,7 @@
 import { TableColumnConfiguration } from './table-column-configuration.interface';
 
 /**
- * The structure provided by using the [ngxHeader] directive
+ * The structure provided by using the [header] directive
  * DataT is the data type for the data in the rows. Gives you property intellesence
  * ColumnConfigT is the data type for the definition provided to the "config" input of the TableComponent. Gives you intellesence
  */

@@ -3,10 +3,10 @@ import { NgxTableComponent } from '../components';
 import { TableCellTemplateService } from '../services';
 
 @Directive({
-    selector: '[ngxHeader]'
+    selector: '[header]'
 })
 export class NgxTableHeaderCellTemplateDirective implements OnInit {
-   @Input() ngxHeader: string;
+   @Input() header: string;
 
    constructor(
        protected host: TemplateRef<any>,
@@ -15,6 +15,6 @@ export class NgxTableHeaderCellTemplateDirective implements OnInit {
     ) { }
 
    ngOnInit() {
-       this.service.register('header-cell', this.ngxTable.configuration.tableId, this.ngxHeader, this.host);
+       this.service.register('header-cell', this.ngxTable.configuration.tableId, this.header, this.host);
    }
 }

@@ -3,10 +3,10 @@ import { NgxTableComponent } from '../components';
 import { TableCellTemplateService } from '../services';
 
 @Directive({
-    selector: '[ngxColumn]'
+    selector: '[column]'
 })
 export class NgxTableRowCellTemplateDirective implements OnInit {
-   @Input() ngxColumn: string;
+   @Input() column: string;
 
    constructor(
        protected host: TemplateRef<any>,
@@ -15,6 +15,6 @@ export class NgxTableRowCellTemplateDirective implements OnInit {
     ) { }
 
    ngOnInit() {
-       this.service.register('row-cell', this.ngxTable.configuration.tableId ,this.ngxColumn, this.host);
+       this.service.register('row-cell', this.ngxTable.configuration.tableId ,this.column, this.host);
    }
 }

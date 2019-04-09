@@ -84,17 +84,17 @@ export class BasicTableComponent {
 basic-table.component.html
 
 ```html
-<ngx-table [configuration]="tableConfig" [items]="data">
+<hive-ngx-table [configuration]="tableConfig" [items]="data">
     <ng-container *ngFor="let columnId of tableConfig.columns">
-        <ng-template let-item [ngxHeader]="columnId">
+        <ng-template let-item [header]="columnId">
             <h3>{{ columnId }}</h3>
         </ng-template>
 
-        <ng-template let-item [ngxColumn]="columnId">
+        <ng-template let-item [column]="columnId">
           <span>{{ item.data[columnId] }}</span>
       </ng-template>
     </ng-container>
-</ngx-table>
+</hive-ngx-table>
 ```
 
 ## Inputs and Configuration
@@ -105,8 +105,8 @@ basic-table.component.html
 |---|---|
 | `items` | the data to display in the table |
 | `configuration` | The configuration ([TableConfiguration](https://github.com/TeamHive/ngx-table/blob/master/libs/ngx-table/src/lib/models/table-configuration.interface.ts)) used to define the table. The `tableId` and `columns` properties are required. <br> - `tableId` allows for multiple tables in the same view. <br> - `columns` defines the properties of the data - passed to `items` input - to show <br> This object can be extended to provide any implementation specific data to the header and row cells. |
-| `ngxHeader` | A directive indicating a header template for a column. The value must match a column within the columns array of the table configuration. <br> `let-item` provides the variable `item: `[HeaderCellContext](https://github.com/TeamHive/ngx-table/blob/master/libs/ngx-table/src/lib/models/header-cell-context.interface.ts) to the ng-template |
-| `ngxColumn `| A directive indicating a data cell template for a row. The template will be applied in every row of the data. The value must match a column within the columns array of the table configuration. <br> `let-item` provides the variable `item: `[RowCellContext](https://github.com/TeamHive/ngx-table/blob/master/libs/ngx-table/src/lib/models/row-cell-context.interface.ts) to the ng-template |
+| `header` | A directive indicating a header template for a column. The value must match a column within the columns array of the table configuration. <br> `let-item` provides the variable `item: `[HeaderCellContext](https://github.com/TeamHive/ngx-table/blob/master/libs/ngx-table/src/lib/models/header-cell-context.interface.ts) to the ng-template |
+| `column `| A directive indicating a data cell template for a row. The template will be applied in every row of the data. The value must match a column within the columns array of the table configuration. <br> `let-item` provides the variable `item: `[RowCellContext](https://github.com/TeamHive/ngx-table/blob/master/libs/ngx-table/src/lib/models/row-cell-context.interface.ts) to the ng-template |
 
 
 ### CSS Variables

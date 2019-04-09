@@ -1,6 +1,6 @@
-<ngx-table [configuration]="configuration" [items]="data">
+<hive-ngx-table [configuration]="configuration" [items]="data">
   <ng-container *ngFor="let columnId of configuration.columns">
-    <ng-template let-item [ngxHeader]="columnId">
+    <ng-template let-item [header]="columnId">
       <div class="column-header">
         <i class="material-icons" *ngIf="item.definition?.matIconName">{{ item.definition.matIconName }}</i>
         <h3>{{ item.definition?.headerLabel || columnId }}</h3>
@@ -8,19 +8,19 @@
     </ng-template>
   </ng-container>
 
-  <ng-template let-item ngxColumn="name">
+  <ng-template let-item column="name">
     <span>{{ item.data.name }}</span>
   </ng-template>
 
-  <ng-template let-item ngxColumn="bio">
+  <ng-template let-item column="bio">
     <span>{{ item.data.bio }}</span>
   </ng-template>
 
-  <ng-template let-item ngxColumn="location">
+  <ng-template let-item column="location">
     <span>{{ item.data.location }}</span>
   </ng-template>
 
-  <ng-template let-item ngxColumn="active">
+  <ng-template let-item column="active">
     <span [class.inactive]="item.data.active !== true">{{ item.data.active | activeLabel }}</span>
   </ng-template>
-</ngx-table>
+</hive-ngx-table>

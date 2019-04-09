@@ -34,7 +34,7 @@ export class StyledTableComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.tableElement = (this.elementRef.nativeElement as HTMLElement).querySelector('ngx-table') as HTMLElement;
+    this.tableElement = (this.elementRef.nativeElement as HTMLElement).querySelector('hive-ngx-table') as HTMLElement;
   }
 
   onVarChanged(property: string, element: HTMLInputElement) {

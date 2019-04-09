@@ -7,14 +7,14 @@
   <input (change)="onColumnSizeChanged(item, $event.target.value)" onFocus="this.select()" [value]="configuration.definitions[item]?.columnSize" placeholder="A flex value or any css unit (2, 40%, 20vw)"/>
 </div>
 
-<ngx-table [configuration]="configuration" [items]="data">
+<hive-ngx-table [configuration]="configuration" [items]="data">
     <ng-container *ngFor="let columnId of configuration.columns">
-        <ng-template let-item [ngxHeader]="columnId">
+        <ng-template let-item [header]="columnId">
             <h3>{{ columnId }}</h3>
         </ng-template>
 
-        <ng-template let-item [ngxColumn]="columnId">
+        <ng-template let-item [column]="columnId">
           <span>{{ item.data[columnId] }}</span>
       </ng-template>
     </ng-container>
-</ngx-table>
+</hive-ngx-table>

@@ -3,7 +3,7 @@ import { HeaderCellContext, RowCellContext, TableColumnConfiguration, TableConfi
 import { TableCellTemplateService } from '../../services';
 
 @Component({
-    selector: 'ngx-table',
+    selector: 'hive-ngx-table',
     styleUrls: ['table.component.scss'],
     templateUrl: 'table.component.html'
 })
