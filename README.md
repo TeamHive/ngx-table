@@ -116,10 +116,15 @@ basic-table.component.html
 <!-- css-vars:start -->
 | Variable | Description | Default | 
 |---|---|---|
+| `--ngx-table-border-radius` | The border radius of the outermost edges of the table | `0` |
 | `--ngx-table-border-width` | The width of all borders in the table | `1px` |
 | `--ngx-table-border-color` | The color of all borders in the table | `#cccccc` |
 | `--ngx-table-border-style` | The style of all borders in the table | `solid` |
-| `--ngx-table-border-radius` | The border radius of the outermost edges of the table | `0` |
+| `--ngx-table-border` | The base setting for all borders in the table | `var(--ngx-table-border-width) var(--ngx-table-border-style) var(--ngx-table-border-color)` |
+| `--ngx-table-outer-border` | The border for the outside edge of the table | `var(--ngx-table-border)` |
+| `--ngx-header-border` | The border for the bottom edge of the header | `var(--ngx-table-border)` |
+| `--ngx-column-border` | The border for the columns of the table | `var(--ngx-table-border)` |
+| `--ngx-row-border` | The border for the rows of the table | `var(--ngx-table-border)` |
 | `--ngx-table-background-color` | The default color for all backgrounds | `white` |
 | `--ngx-table-header-background-color` | The background color of the table header | `var(--ngx-table-background-color)` |
 | `--ngx-table-odd-row-background-color` | The background color of the odd rows | `var(--ngx-table-background-color)` |

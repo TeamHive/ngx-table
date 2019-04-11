@@ -1,8 +1,16 @@
 :host {
-    --ngx-table-border-width: 1px;
-    --ngx-table-border-color: #cccccc;
-    --ngx-table-border-style: solid;
     --ngx-table-border-radius: 0;
+
+    --ngx-table-border-width: 1px;
+    --ngx-table-border-style: solid;
+    --ngx-table-border-color: #cccccc;
+
+    --ngx-table-border: var(--ngx-table-border-width) var(--ngx-table-border-style) var(--ngx-table-border-color);
+
+    --ngx-table-outer-border: var(--ngx-table-border);
+    --ngx-header-border: var(--ngx-table-border);
+    --ngx-column-border: var(--ngx-table-border);
+    --ngx-row-border: var(--ngx-table-border);
 
     --ngx-table-background-color: white;
 
@@ -34,7 +42,7 @@
 .ngx-table {
     display: flex;
     flex-direction: column;
-    border: var(--ngx-table-border-width) var(--ngx-table-border-style) var(--ngx-table-border-color);
+    border: var(--ngx-table-outer-border);
     border-radius: var(--ngx-table-border-radius);
     min-width: 100%;
     max-width: 100%;
@@ -43,7 +51,7 @@
 
 .ngx-table-header {
     display: flex;
-    border-bottom: var(--ngx-table-border-width) var(--ngx-table-border-style) var(--ngx-table-border-color);
+    border-bottom: var(--ngx-header-border);
     border-top-right-radius: var(--ngx-table-border-radius);
     border-top-left-radius: var(--ngx-table-border-radius);
     background-color: var(--ngx-table-header-background-color);
@@ -63,7 +71,7 @@
     height: var(--ngx-table-row-height);
 
     & ~ .ngx-table-row {
-        border-top: var(--ngx-table-border-width) var(--ngx-table-border-style) var(--ngx-table-border-color);
+        border-top: var(--ngx-row-border);
     }
 
     &:last-child {
@@ -99,6 +107,6 @@
     min-width: 0;
 
     & ~ .ngx-table-cell {
-        border-left: var(--ngx-table-border-width) var(--ngx-table-border-style) var(--ngx-table-border-color);
+        border-left: var(--ngx-column-border);
     }
 }
