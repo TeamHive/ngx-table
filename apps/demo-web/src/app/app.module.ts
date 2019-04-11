@@ -6,11 +6,10 @@ import { RouterModule } from '@angular/router';
 import { DocsExampleModule } from '@ngx-docs/example';
 import { NxModule } from '@nrwl/nx';
 import { NgxTableModule } from '@teamhive/ngx-table';
-import { SourceTabsModule } from '@teamhive/source-tabs';
+import { TeamHivePackageCoreModule } from '@teamhive/package-core';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppComponent } from './app.component';
 import { AppPages, AppRoutes } from './app.routes';
-import { AppComponents } from './components';
 import { AppPipes } from './pipes';
 import { AppTables } from './tables';
 
@@ -18,7 +17,6 @@ import { AppTables } from './tables';
   declarations: [
     AppComponent,
     ...AppPages,
-    ...AppComponents,
     ...AppTables,
     ...AppPipes
   ],
@@ -29,7 +27,7 @@ import { AppTables } from './tables';
     NgxTableModule,
     DocsExampleModule.forRoot(),
     FlexLayoutModule,
-    SourceTabsModule.forRoot(),
+    TeamHivePackageCoreModule,
     BrowserAnimationsModule,
     MarkdownModule.forRoot()
   ],
