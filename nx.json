@@ -13,6 +13,9 @@
     },
     "ngx-table": {
       "tags": []
+    },
+    "angular-package-core": {
+      "tags": []
     }
   }
 }

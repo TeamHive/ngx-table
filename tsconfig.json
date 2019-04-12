@@ -14,6 +14,7 @@
     "baseUrl": ".",
     "paths": {
       "@teamhive/ngx-table": ["libs/ngx-table/src/index.ts"],
+      "@teamhive/angular-package-core": ["libs/angular-package-core/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]
