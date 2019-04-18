@@ -1,0 +1,25 @@
+<h3 class="example-header">Row Configurations and Behaviour</h3>
+<p>
+  The table configuration accepts the ability to specify a row clicked and check disabled function.
+  Interact with the table and view the component code to see how they work.
+  <br/>
+  <br/>
+  If the row is disabled, the onRowClicked function will not be invoked
+</p>
+
+<hive-ngx-table [configuration]="configuration" [items]="data">
+    <ng-container *ngFor="let columnId of configuration.columns">
+        <ng-template let-item [header]="columnId">
+            <h3>{{ columnId }}</h3>
+        </ng-template>
+
+        <ng-template let-item [column]="columnId">
+          <span>{{ item.data[columnId] }}</span>
+      </ng-template>
+    </ng-container>
+</hive-ngx-table>
+
+<div class="detail" *ngIf="selected">
+  <p>Name: {{selected.name}}</p>
+  <p>Bio: {{selected.bio}}</p>
+</div>

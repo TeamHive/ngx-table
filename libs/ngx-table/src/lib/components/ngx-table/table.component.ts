@@ -44,9 +44,15 @@ export class NgxTableComponent<DataT, ColumnConfigT extends TableColumnConfigura
     }
 
     onRowClick(item: DataT) {
-      if (this.configuration.onRowClick) {
+      if (this.configuration.onRowClick && this.isRowDisabled(item) !== true) {
         this.configuration.onRowClick(item);
       }
+    }
+
+    isRowDisabled(item: DataT): boolean {
+        if (this.configuration.isRowDisabled) {
+            return this.configuration.isRowDisabled(item)
+        }
     }
 
     getColumnDefinition(columnName: keyof DataT): ColumnConfigT | undefined {

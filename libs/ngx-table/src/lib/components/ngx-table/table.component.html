@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="ngx-table-data">
-        <div *ngFor="let item of items; let even=even; let odd=odd" (click)="onRowClick(item)"
+        <div *ngFor="let item of items; let even=even; let odd=odd" (click)="onRowClick(item)" [class.disabled]="isRowDisabled(item)"
             class="ngx-table-row" [class.ngx-table-row-odd]="odd" [class.ngx-table-row-even]="even">
 
             <div *ngFor="let columnId of configuration.columns; let i=index"

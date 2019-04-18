@@ -18,6 +18,9 @@ export class AppComponent {
     title: 'Styled',
     location: '/styled'
   }, {
+    title: 'Row Behaviour',
+    location: '/rows'
+  }, {
     title: 'Configured',
     location: '/configured'
   }, {

@@ -21,4 +21,9 @@ export interface TableConfiguration<DataT, ColumnConfigT extends TableColumnConf
      * An optional handler for when a user clicks on a row
      */
     onRowClick?: (item: DataT) => void;
+
+    /**
+     * If suppllied, this function will be called for every row to determine if the row should be disabled
+     */
+    isRowDisabled?: (item:DataT) => boolean;
 }

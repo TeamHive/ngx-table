@@ -3,6 +3,7 @@ import { BasicTablePageComponent } from './pages/basic-table-page/basic-table-pa
 import { ConfiguredTablePageComponent } from './pages/configured-table-page/configured-table-page.component';
 import { CustomizedTablePageComponent } from './pages/customized-table-page/customized-table-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { RowsBehaviorTablePageComponent } from './pages/rows-behavior-table-page/rows-behavior-table-page.component';
 import { StyledTablePageComponent } from './pages/styled-table-page/styled-table-page.component';
 
 /**
@@ -27,6 +28,10 @@ export const AppRoutes: Routes = [
       component: ConfiguredTablePageComponent
     },
     {
+      path: 'rows',
+      component: RowsBehaviorTablePageComponent
+    },
+    {
       path: 'customized',
       component: CustomizedTablePageComponent
     },
@@ -46,5 +51,6 @@ export const AppPages = [
   BasicTablePageComponent,
   StyledTablePageComponent,
   ConfiguredTablePageComponent,
-  CustomizedTablePageComponent
+  CustomizedTablePageComponent,
+  RowsBehaviorTablePageComponent
 ];
