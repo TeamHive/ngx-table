@@ -1,5 +1,5 @@
 import { Injectable, TemplateRef } from '@angular/core';
-import { TableCellTemplate, TableCellTemplateScope } from '../models';
+import { TableCellTemplate, TableCellTemplateScope } from '../models/index';
 
 @Injectable()
 export class TableCellTemplateService {

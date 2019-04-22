@@ -1,6 +1,6 @@
 import { Directive, Input, OnInit, TemplateRef } from '@angular/core';
-import { NgxTableComponent } from '../components';
-import { TableCellTemplateService } from '../services';
+import { NgxTableComponent } from '../components/index';
+import { TableCellTemplateService } from '../services/index';
 
 @Directive({
     selector: '[column]'

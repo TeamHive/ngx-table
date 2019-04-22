@@ -1,6 +1,6 @@
 import { Component, ContentChildren, Input, TemplateRef } from '@angular/core';
-import { HeaderCellContext, RowCellContext, TableColumnConfiguration, TableConfiguration } from '../../models';
-import { TableCellTemplateService } from '../../services';
+import { HeaderCellContext, RowCellContext, TableColumnConfiguration, TableConfiguration } from '../../models/index';
+import { TableCellTemplateService } from '../../services/index';
 
 @Component({
     selector: 'hive-ngx-table',
